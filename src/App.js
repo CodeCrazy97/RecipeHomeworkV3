@@ -110,11 +110,17 @@ class App extends Component {
             imageClick={this.imageClick}
           />
         )}
-        {console.log('index : ' + this.selectedIndex)}
+        {console.log("index : " + this.selectedIndex)}
         <Recipe index={this.selectedIndex} state={this.state} />
       </div>
     );
   }
+}
+
+// createMarkup: returns the data in HTML format. Used with JSON that contains HTML elements.
+// data - the JSON text that (may) contain HTML elements.
+function createMarkup(data) {
+  return { __html: data };
 }
 
 const Recipe = ({ index, state }) => (
@@ -128,10 +134,10 @@ const Recipe = ({ index, state }) => (
       <h1> {state.recipes[index].title} </h1>
     </span>
     <span>
-      <h2> {state.recipes[index].field_ingredients} </h2>
+      <h2> Ingredients: {state.recipes[index].field_ingredients} </h2>
     </span>
     <span>
-      <h3> {state.recipes[index].body} </h3>
+      <h3 dangerouslySetInnerHTML={createMarkup(state.recipes[index].body)} />
     </span>
   </div>
 );
@@ -153,7 +159,7 @@ const RecipeCollection = ({ list, imageClick }) => (
             <h1> {item.title} </h1>
           </span>
           <span>
-            <h3> {item.field_summary} </h3>
+            <h3 dangerouslySetInnerHTML={createMarkup(item.field_summary)} />
           </span>
         </a>
       </div>
