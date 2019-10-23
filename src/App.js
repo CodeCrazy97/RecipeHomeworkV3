@@ -17,14 +17,15 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { title: "", recipes: null, currentRecipe: null };
+    this.state = { recipes: [{}], currentRecipe: null };
     this.selectedIndex = 0; // Keeps track of which index into the recipes array was clicked. Default is first recipe in the list.
     this.imageClick = this.imageClick.bind(this);
     this.previousButtonClick = this.previousButtonClick.bind(this);
     this.nextButtonClick = this.nextButtonClick.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
+    /*
     // ----------------------
     // Next few lines of code are for OFFLINE TESTING. Delete them before submitting the homework.
     const tempRecipes = [
@@ -55,11 +56,13 @@ class App extends Component {
 
     this.setState({ recipes: tempRecipes });
     // ----------------------
+    */
 
+    const url = "".concat(PATH_BASE, JSON_EXTENSION);
     /*
     const that = this;
-    const url = ${PATH_BASE}${JSON_EXTENSION};  
-               //http://gtest.dev.wwbtc.com/sites/default/files/2019-10/img_9212-683x1024.jpg
+    
+
     fetch(url)
       .then(function(response) {
         if (response.status >= 400) {
@@ -71,6 +74,11 @@ class App extends Component {
         that.setState({ recipes: data });
       });
       */
+
+    console.log("componentDidMount");
+    fetch(url)
+      .then(response => response.json())
+      .then(data => this.setState({ recipes: data }));
   }
 
   // Called when Previous button is clicked.
@@ -100,17 +108,18 @@ class App extends Component {
   };
 
   render() {
-    console.log("rendered");
     return (
-      // A recipe has NOT yet been clicked; display the homepage with overview of recipes (nothing has been clicked yet).
-      <div className="split left">
-        {this.state.recipes && (
-          <RecipeCollection
-            list={this.state.recipes}
-            imageClick={this.imageClick}
-          />
-        )}
-        {console.log("index : " + this.selectedIndex)}
+      <div>
+        // A recipe has NOT yet been clicked; display the homepage with overview
+        of recipes (nothing has been clicked yet).
+        <div className="split left">
+          {this.state.recipes && (
+            <RecipeCollection
+              list={this.state.recipes}
+              imageClick={this.imageClick}
+            />
+          )}
+        </div>
         <Recipe index={this.selectedIndex} state={this.state} />
       </div>
     );
@@ -126,8 +135,7 @@ function createMarkup(data) {
 const Recipe = ({ index, state }) => (
   <div className="split right">
     <span>
-      {console.log("field images = " + state.recipes[index].field_images)}
-      {console.log("PATH_BASE = " + PATH_BASE)}
+      {console.log("field images : " + state.recipes[index].field_images)}
       <img src={PATH_BASE + state.recipes[index].field_images} />
     </span>
     <span>
@@ -153,7 +161,7 @@ const RecipeCollection = ({ list, imageClick }) => (
           onClick={() => imageClick(index)}
         >
           <span>
-            <img src={item.field_images} />
+            <img src={PATH_BASE + item.field_images} />
           </span>
           <span>
             <h1> {item.title} </h1>
@@ -162,6 +170,7 @@ const RecipeCollection = ({ list, imageClick }) => (
             <h3 dangerouslySetInnerHTML={createMarkup(item.field_summary)} />
           </span>
         </a>
+        <br />
       </div>
     ))}
   </div>
