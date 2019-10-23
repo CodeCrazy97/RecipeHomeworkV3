@@ -3,9 +3,42 @@
   margin: 20px;
 }
 
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  text-align: center;
+}
+/* Control the left side */
+.left {
+  left: 0;
+  background-color: lightsalmon;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background-color: palegreen;
+}
+
+
+
+.page-right {
+  text-align: left;
+  margin: 5px;
+  right: 0;
+  position: absolute;
+}
+
 .page-left {
   text-align: left;
-  margin: 20px;
+  margin: 5px;
+  right: 70%;
+  position: absolute;
 }
 
 .homepage-link {
