@@ -15,8 +15,6 @@ class App extends Component {
     super(props);
 
     this.state = { title: "", recipes: null };
-
-    this.isClicked = false; // Determines if a recipe at homepage has been clicked.
     this.selectedIndex = -1; // Keeps track of which index into the recipes array was clicked.
     this.imageClick = this.imageClick.bind(this);
     this.previousButtonClick = this.previousButtonClick.bind(this);
@@ -24,7 +22,6 @@ class App extends Component {
   }
 
   componentWillMount() {
-    console.log("componentWillMount()");
     const that = this;
     const url = "http://gtest.dev.wwbtc.com/json/rec";
 
@@ -44,7 +41,6 @@ class App extends Component {
   previousButtonClick = oldIndex => {
     this.selectedIndex = displayOtherRecipe(oldIndex);
     this.setState({
-      isClicked: this.isClicked,
       selectedIndex: this.selectedIndex
     });
   };
@@ -53,7 +49,6 @@ class App extends Component {
   nextButtonClick = oldIndex => {
     this.selectedIndex = displayOtherRecipe(oldIndex);
     this.setState({
-      isClicked: this.isClicked,
       selectedIndex: this.selectedIndex
     });
   };
@@ -61,45 +56,52 @@ class App extends Component {
   // imageClick: called when a recipe picture, title, or summary is clicked
   // Will take user to page that displays the details of the recipe.
   imageClick = (index, wasClicked) => {
-    this.isClicked = !wasClicked;
+    console.log("Clicked index = " + index);
     this.selectedIndex = index;
     this.setState({
-      isClicked: this.isClicked,
       selectedIndex: this.selectedIndex
     });
   };
 
   render() {
-    console.log("render called. title = " + this.state.title);
-    return !this.isClicked ? (
+    return (
       // A recipe has NOT yet been clicked; display the homepage with overview of recipes (nothing has been clicked yet).
       <div className="page">
         <div className="interactions">
           {this.state.recipes && (
-            <RecipeCollection list={this.state.recipes} imageClick={this.imageClick} />
+            <RecipeCollection
+              list={this.state.recipes}
+              imageClick={this.imageClick}
+            />
           )}
         </div>
       </div>
-    ) : ( 
-      {...console.log("Do nothing.")}
     );
   }
 }
 
 const RecipeCollection = ({ list, imageClick }) => (
-  <div className="table">
-    {list.map(item => (
-      <div key={item.objectID} className="table-row">
+  <div class="page-left">
+    {list.map((item, index) => (
+      <div key={item.objectID}>
         <a
           style={{ cursor: "pointer" }}
           type="button"
           className="card-link"
-          {...console.log("CLICKED!!!")}
-          onClick={() => imageClick(0, this.isClicked)}
+          onClick={() => imageClick(index)}
         >
-          <span style={{ width: "30%" }}> {item.title} </span>
-          <span style={{ width: "10%" }}> {item.body} </span>
-          <span style={{ width: "10%" }}> {item.summary} </span>
+          <span>
+            <img src={item.field_images} />
+          </span>
+          <span>
+            <h1> {item.title} </h1>
+          </span>
+          <span>
+            <h2> {item.body} </h2>
+          </span>
+          <span>
+            <h3> {item.summary} </h3>
+          </span>
         </a>
       </div>
     ))}
