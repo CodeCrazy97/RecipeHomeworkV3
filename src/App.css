@@ -12,14 +12,9 @@
   overflow-x: hidden;
   padding-top: 20px;
   text-align: center;
-  border:5px solid brown;
-  /*
-  background-color: DarkSalmon;
-  padding:10px;
-  border:5px solid brown;
-  margin:30px; 
-  */
+  border: 5px solid brown;
 }
+
 /* Control the left side */
 .left {
   left: 0;
@@ -34,7 +29,17 @@
   background-color: palegreen;
 }
 
+.bottom-right-button {
+  position: relative;
+  right: 20;
+  bottom: 20;
+}
 
+.bottom-left-button {
+  position: relative;
+  right: 0;
+  bottom: 0;
+}
 
 .page-right {
   text-align: left;
@@ -121,7 +126,7 @@
 }
 
 .bottom-left-button {
-	position: relative;
-	right: 0;
-	bottom: 0;
-  }
+  position: relative;
+  right: 0;
+  bottom: 0;
+}
