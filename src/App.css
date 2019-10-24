@@ -32,12 +32,20 @@
 
 .bottom-right-button {
   margin: 20px;
+  background-color: yellow;
   cursor: pointer;
 }
 
 .bottom-left-button {
   margin: 20px;
+  background-color: yellow;
   cursor: pointer;
+}
+
+.small-image {
+  left: 0px;
+  position: relative;
+  width: 150px;
 }
 
 .page-right {

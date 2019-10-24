@@ -123,7 +123,7 @@ const RecipeCollection = ({ list, state }) => (
           onClick={() => state.imageClick(index)}
         >
           <span>
-            <img src={PATH_BASE + item.field_images} />
+            <img class="small-image" src={PATH_BASE + item.field_images} />
           </span>
           <span>
             <h3> {item.title} </h3>
