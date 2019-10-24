@@ -11,6 +11,7 @@
   top: 0;
   overflow-x: hidden;
   padding-top: 20px;
+  padding-bottom: 20px;
   text-align: center;
   border: 5px solid brown;
 }
@@ -30,15 +31,13 @@
 }
 
 .bottom-right-button {
-  position: relative;
-  right: 20;
-  bottom: 20;
+  margin: 20px;
+  cursor: pointer;
 }
 
 .bottom-left-button {
-  position: relative;
-  right: 0;
-  bottom: 0;
+  margin: 20px;
+  cursor: pointer;
 }
 
 .page-right {

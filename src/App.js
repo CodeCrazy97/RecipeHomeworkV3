@@ -17,7 +17,13 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { recipes: [{}] };
+    this.state = {
+      recipes: [{}],
+      imageClick: this.imageClick,
+      previousButtonClick: this.previousButtonClick,
+      nextButtonClick: this.nextButtonClick
+    };
+
     this.selectedIndex = 0; // Keeps track of which index into the recipes array was clicked. Default is first recipe in the list.
     this.imageClick = this.imageClick.bind(this);
     this.previousButtonClick = this.previousButtonClick.bind(this);
@@ -58,10 +64,7 @@ class App extends Component {
       <div>
         <div className="split left">
           {this.state.recipes && (
-            <RecipeCollection
-              list={this.state.recipes}
-              imageClick={this.imageClick}
-            />
+            <RecipeCollection list={this.state.recipes} state={this.state} />
           )}
         </div>
         <Recipe index={this.selectedIndex} state={this.state} />
@@ -93,25 +96,23 @@ const Recipe = ({ index, state }) => (
     </span>
     <span>
       <input
-        style={{ cursor: "pointer" }}
         className="bottom-left-button"
         type="button"
         value="Previous"
-        onClick={() => this.previousButtonClick(this.selectedIndex)}
+        onClick={() => state.previousButtonClick(index)}
       />
       <input
-        style={{ cursor: "pointer" }}
         className="bottom-right-button"
         type="button"
         value="Next"
-        onClick={() => this.nextButtonClick(this.selectedIndex)}
+        onClick={() => state.nextButtonClick(index)}
       />
     </span>
   </div>
 );
 
 // RecipeCollection: displays a brief summary of the recipes on the left-hand side of the screen.
-const RecipeCollection = ({ list, imageClick }) => (
+const RecipeCollection = ({ list, state }) => (
   <div>
     {list.map((item, index) => (
       <div key={item.objectID}>
@@ -119,7 +120,7 @@ const RecipeCollection = ({ list, imageClick }) => (
           style={{ cursor: "pointer" }}
           type="button"
           className="card-link"
-          onClick={() => imageClick(index)}
+          onClick={() => state.imageClick(index)}
         >
           <span>
             <img src={PATH_BASE + item.field_images} />
