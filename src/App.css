@@ -1,33 +1,47 @@
 .page {
-  text-align: center;
   margin: 20px;
 }
 
-.split {
+.split-right {
   height: 100%;
-  width: 49.5%;
+  width: 59.5%;
   position: fixed;
   z-index: 1;
   top: 0;
   overflow-x: hidden;
   padding-top: 20px;
   padding-bottom: 20px;
-  text-align: center;
   border: 5px solid brown;
+  right: 0;
+  padding: 5px;
+  text-align: center;
+  background-color: palegreen;
 }
 
-/* Control the left side */
-.left {
+.split-left {
+  height: 100%;
+  width: 39.5%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 5px solid brown;
   left: 0;
   padding: 5px;
   background-color: lightsalmon;
 }
 
+
+/* Control the left side */
+.left {
+  
+}
+
 /* Control the right side */
 .right {
-  right: 0;
-  padding: 5px;
-  background-color: palegreen;
+ 
 }
 
 .bottom-right-button {
@@ -43,9 +57,18 @@
 }
 
 .small-image {
+  display: inline-block;
+  width: 22%;
+
+  clear: both;
   left: 0px;
-  position: relative;
-  width: 150px;
+  padding: 10px;
+}
+
+.text-right {
+  vertical-align: top;
+  display: inline-block;
+  width: 60%;
 }
 
 .page-right {

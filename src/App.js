@@ -62,7 +62,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div className="split left">
+        <div className="split-left">
           {this.state.recipes && (
             <RecipeCollection list={this.state.recipes} state={this.state} />
           )}
@@ -81,7 +81,7 @@ function createMarkup(data) {
 
 // Recipe: shows details about the first recipe in the list or a recipe that has been clicked on.
 const Recipe = ({ index, state }) => (
-  <div className="split right">
+  <div className="split-right">
     <span>
       <img src={PATH_BASE + state.recipes[index].field_images} />
     </span>
@@ -125,13 +125,12 @@ const RecipeCollection = ({ list, state }) => (
           <span>
             <img class="small-image" src={PATH_BASE + item.field_images} />
           </span>
-          <span>
+          <span class="text-right">
             <h3> {item.title} </h3>
-          </span>
-          <span>
             <h4 dangerouslySetInnerHTML={createMarkup(item.field_summary)} />
           </span>
         </a>
+        <br />
         <br />
       </div>
     ))}
