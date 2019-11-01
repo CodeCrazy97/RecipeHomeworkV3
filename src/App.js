@@ -138,3 +138,5 @@ const RecipeCollection = ({ list, state }) => (
 );
 
 export default App;
+
+export { App, Recipe, RecipeCollection };
