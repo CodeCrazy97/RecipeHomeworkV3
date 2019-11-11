@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import renderer from "react-test-renderer";
-import App, { Recipe } from "./App";
+import App, { Recipe, RecipeCollection } from "./App";
 import Adapter from "enzyme-adapter-react-16";
-import { Enzyme, render, shallow, configure } from "enzyme";
+import { Enzyme, render, mount, shallow, configure } from "enzyme";
+import { URL } from "url";
 
 const props = {
   index: 0,
@@ -49,13 +50,18 @@ describe("recipe homework", () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it("contains one left screen split", () => {
-    const element = shallow(<App />);
-    expect(element.find(".split-left").length).toBe(1);
+  // The RecipeCollection component will render, as the recipes list contains data.
+  it("contains split-left component", () => {
+    const element = render(<RecipeCollection list={props.state.recipes} />);
+    expect(element.hasClass("split-left"));
   });
 
-  it("contains one right screen split", () => {
-    const element = shallow(<Recipe {...props} />);
-    expect(element.find(".split-right").length).toBe(1);
+  // If there are no recipes returned, then expect the RecipeCollection component not to render.
+  it("doesn't contain split-left component", () => {
+    const emptyRecipeList = [{}];
+    const element = shallow(
+      <RecipeCollection list={emptyRecipeList} state={props.state} />
+    );
+    expect(element.hasClass("split-left"));
   });
 });

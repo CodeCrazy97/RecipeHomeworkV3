@@ -63,7 +63,7 @@ class App extends Component {
     return (
       <div>
         <div className="split-left">
-          {this.state.recipes && (
+          {this.state.recipes.length != undefined && (
             <RecipeCollection list={this.state.recipes} state={this.state} />
           )}
         </div>
