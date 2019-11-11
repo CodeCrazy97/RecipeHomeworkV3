@@ -55,13 +55,4 @@ describe("recipe homework", () => {
     const element = render(<RecipeCollection list={props.state.recipes} />);
     expect(element.hasClass("split-left"));
   });
-
-  // If there are no recipes returned, then expect the RecipeCollection component not to render.
-  it("doesn't contain split-left component", () => {
-    const emptyRecipeList = [{}];
-    const element = shallow(
-      <RecipeCollection list={emptyRecipeList} state={props.state} />
-    );
-    expect(element.hasClass("split-left"));
-  });
 });

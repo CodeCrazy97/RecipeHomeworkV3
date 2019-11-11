@@ -62,10 +62,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div className="split-left">
-          {this.state.recipes.length != undefined && (
-            <RecipeCollection list={this.state.recipes} state={this.state} />
-          )}
+        <div>
+          <RecipeCollection list={this.state.recipes} state={this.state} />
         </div>
         <Recipe index={this.selectedIndex} state={this.state} />
       </div>
@@ -113,7 +111,7 @@ const Recipe = ({ index, state }) => (
 
 // RecipeCollection: displays a brief summary of the recipes on the left-hand side of the screen.
 const RecipeCollection = ({ list, state }) => (
-  <div>
+  <div className="split-left">
     {list.map((item, index) => (
       <div key={item.objectID}>
         <a

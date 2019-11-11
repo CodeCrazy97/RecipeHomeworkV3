@@ -2,10 +2,10 @@
 
 exports[`recipe homework matches the snapshot 1`] = `
 <div>
-  <div
-    className="split-left"
-  >
-    <div>
+  <div>
+    <div
+      className="split-left"
+    >
       <div>
         <a
           className="card-link"
