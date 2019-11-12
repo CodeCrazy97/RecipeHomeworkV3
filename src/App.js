@@ -60,14 +60,19 @@ class App extends Component {
   };
 
   render() {
-    return (
-      <div>
+    const numberOfRecipes = Object.keys(this.state.recipes[0]).length;
+    let rc;
+    if (numberOfRecipes > 0) {
+      rc = (
         <div>
-          <RecipeCollection list={this.state.recipes} state={this.state} />
+          <RecipeCollection list={this.state.recipes} state={this.state} />{" "}
+          <Recipe index={this.selectedIndex} state={this.state} />
         </div>
-        <Recipe index={this.selectedIndex} state={this.state} />
-      </div>
-    );
+      );
+    } else {
+      rc = null;
+    }
+    return <div>{rc}</div>;
   }
 }
 
