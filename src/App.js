@@ -18,6 +18,7 @@ class App extends Component {
     super(props);
 
     this.state = {
+      indexTest: 0,
       recipes: [{}],
       imageClick: this.imageClick,
       previousButtonClick: this.previousButtonClick,
@@ -60,17 +61,23 @@ class App extends Component {
   };
 
   render() {
+    console.log("variable = " + process.env.REACT_APP_MY_VARIABLE);
     const numberOfRecipes = Object.keys(this.state.recipes[0]).length;
     let rc;
     if (numberOfRecipes > 0) {
       rc = (
         <div>
-          <RecipeCollection list={this.state.recipes} state={this.state} />{" "}
+          <RecipeCollection list={this.state.recipes} state={this.state} />
           <Recipe index={this.selectedIndex} state={this.state} />
         </div>
       );
     } else {
-      rc = null;
+      rc = (
+        <div className="empty-recipes-message">
+          There are no recipes to view! <br />
+          You may not be connected to the Internet.
+        </div>
+      );
     }
     return <div>{rc}</div>;
   }
@@ -85,6 +92,7 @@ function createMarkup(data) {
 // Recipe: shows details about the first recipe in the list or a recipe that has been clicked on.
 const Recipe = ({ index, state }) => (
   <div className="split-right">
+    {console.log("state.indexTest : " + state.indexTest)}
     <span>
       <img src={PATH_BASE + state.recipes[index].field_images} />
     </span>

@@ -5,6 +5,7 @@ import App, { Recipe, RecipeCollection } from "./App";
 import Adapter from "enzyme-adapter-react-16";
 import { Enzyme, render, mount, shallow, configure } from "enzyme";
 import { URL } from "url";
+import { stat } from "fs";
 
 const props = {
   index: 0,
@@ -46,13 +47,23 @@ describe("recipe homework", () => {
   });
 
   test("matches the snapshot", () => {
-    const tree = renderer.create(<App />).toJSON();
+    const tree = renderer
+      .create(<App />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  // The Recipe component
 
   // The RecipeCollection component will render, as the recipes list contains data.
   it("contains split-left component", () => {
     const element = render(<RecipeCollection list={props.state.recipes} />);
     expect(element.hasClass("split-left"));
+  });
+
+  // The RecipeCollection component won't render, as the recipes list is empty.
+  it("does not contain split-left component", () => {
+    const element = render(<RecipeCollection list={props.state.recipes} />);
+    expect(!element.hasClass("split-left"));
   });
 });

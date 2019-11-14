@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`recipe homework matches the snapshot  1`] = `<div />`;
+
 exports[`recipe homework matches the snapshot 1`] = `<div />`;

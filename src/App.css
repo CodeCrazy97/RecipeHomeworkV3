@@ -61,6 +61,12 @@
   width: 60%;
 }
 
+.empty-recipes-message {
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+}
+
 .page-right {
   text-align: left;
   margin: 5px;
