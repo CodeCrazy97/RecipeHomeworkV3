@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`recipe homework matches the snapshot  1`] = `<div />`;
-
-exports[`recipe homework matches the snapshot 1`] = `<div />`;
+exports[`recipe homework matches the snapshot 1`] = `
+<div>
+  <div
+    className="empty-recipes-message"
+  >
+    There are no recipes to view! 
+    <br />
+    You may not be connected to the Internet.
+  </div>
+</div>
+`;
