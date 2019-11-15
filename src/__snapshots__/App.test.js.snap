@@ -11,3 +11,15 @@ exports[`recipe homework matches the snapshot 1`] = `
   </div>
 </div>
 `;
+
+exports[`recipe homework renders when there are recipes 1`] = `
+<div>
+  <div
+    className="empty-recipes-message"
+  >
+    There are no recipes to view! 
+    <br />
+    You may not be connected to the Internet.
+  </div>
+</div>
+`;

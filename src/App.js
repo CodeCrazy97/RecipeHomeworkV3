@@ -136,9 +136,9 @@ const RecipeCollection = ({ list, state }) => (
           onClick={() => state.imageClick(index)}
         >
           <span>
-            <img class="small-image" src={PATH_BASE + item.field_images} />
+            <img className="small-image" src={PATH_BASE + item.field_images} />
           </span>
-          <span class="text-right">
+          <span className="text-right">
             <h3> {item.title} </h3>
             <h4 dangerouslySetInnerHTML={createMarkup(item.field_summary)} />
           </span>
