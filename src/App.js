@@ -61,7 +61,8 @@ class App extends Component {
   };
 
   render() {
-    console.log("variable = " + process.env.REACT_APP_MY_VARIABLE);
+    console.log(process.env.REACT_APP_DOC_TITLE);
+
     const numberOfRecipes = Object.keys(this.state.recipes[0]).length;
     let rc;
     if (numberOfRecipes > 0) {
@@ -79,7 +80,8 @@ class App extends Component {
         </div>
       );
     }
-    return <div>{rc}</div>;
+   
+  return <div>{rc}{console.log(process.env.REACT_APP_DOC_TITLE)}</div>;
   }
 }
 
