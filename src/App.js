@@ -5,11 +5,23 @@ const PATH_BASE = "http://gtest.dev.wwbtc.com";
 const JSON_EXTENSION = "/json/rec";
 
 // displayOtherRecipe: called when Previous or Next buttons is clicked. Determines which recipe to display next.
-function displayOtherRecipe(index) {
-  if (index == 0) {
-    return 1;
+function displayOtherRecipe(index, recipeCount, prevButtonClicked) {
+  // If it was the "Previous Button" click that caused this function to be called, then display the previous recipe.
+  // Otherwise, it was the "Next Button" that caused this function to be called - display the next recipe.
+  if (prevButtonClicked) {
+    if (index == 0) {
+      // Reached the beginning of the recipe list - go to the end.
+      return recipeCount - 1;
+    } else {
+      return index - 1;
+    }
   } else {
-    return 0;
+    if (index == recipeCount - 1) {
+      // Reached the end of the recipe list - loop back to the beginning.
+      return 0;
+    } else {
+      return index + 1;
+    }
   }
 }
 
@@ -41,7 +53,7 @@ class App extends Component {
 
   // Called when Previous button is clicked.
   previousButtonClick = oldIndex => {
-    this.selectedIndex = displayOtherRecipe(oldIndex);
+    this.selectedIndex = displayOtherRecipe(oldIndex, this.state.recipes.length, true);
 
     // Set the currently viewed recipe to the one that was clicked.
     this.setState({ selectedIndex: this.selectedIndex });
@@ -49,7 +61,7 @@ class App extends Component {
 
   // Called when Next button is clicked.
   nextButtonClick = oldIndex => {
-    this.selectedIndex = displayOtherRecipe(oldIndex);
+    this.selectedIndex = displayOtherRecipe(oldIndex, this.state.recipes.length, false);
     this.setState({ selectedIndex: this.selectedIndex });
   };
 
@@ -61,8 +73,6 @@ class App extends Component {
   };
 
   render() {
-    console.log(process.env.REACT_APP_DOC_TITLE);
-
     const numberOfRecipes = Object.keys(this.state.recipes[0]).length;
     let rc;
     if (numberOfRecipes > 0) {
@@ -75,13 +85,23 @@ class App extends Component {
     } else {
       rc = (
         <div className="empty-recipes-message">
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
           There are no recipes to view! <br />
-          You may not be connected to the Internet.
+          You might not be connected to the Internet.
         </div>
       );
     }
-   
-  return <div>{rc}{console.log(process.env.REACT_APP_DOC_TITLE)}</div>;
+
+    return (
+      <div>
+        {rc}
+        {console.log(process.env.REACT_APP_TAB_TITLE)}
+      </div>
+    );
   }
 }
 
@@ -152,4 +172,4 @@ const RecipeCollection = ({ list, state }) => (
 
 export default App;
 
-export { App, Recipe, RecipeCollection };
+export { App, Recipe, RecipeCollection, displayOtherRecipe };

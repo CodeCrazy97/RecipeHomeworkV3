@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import renderer from "react-test-renderer";
-import App, { Recipe, RecipeCollection } from "./App";
+import App, { displayOtherRecipe, Recipe, RecipeCollection } from "./App";
 import Adapter from "enzyme-adapter-react-16";
 import { Enzyme, render, mount, shallow, configure } from "enzyme";
 import { URL } from "url";
@@ -64,4 +64,13 @@ describe("recipe homework", () => {
     const element = render(<RecipeCollection list={props.state.recipes} />);
     expect(!element.hasClass("split-left"));
   });
+
+  it("returns index of first recipe", () => {
+    expect(displayOtherRecipe(3, 4, false)).toEqual(0);
+  });
+
+  it("returns index of last recipe", () => {
+    expect(displayOtherRecipe(0, 6, true)).toEqual(5);
+  });
+
 });
