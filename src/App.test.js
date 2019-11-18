@@ -1,7 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import renderer from "react-test-renderer";
-import App, { displayOtherRecipe, Recipe, RecipeCollection } from "./App";
+import App, {
+  previousButtonClick,
+  nextButtonClick,
+  imageClick,
+  displayOtherRecipe,
+  Recipe,
+  RecipeCollection
+} from "./App";
 import Adapter from "enzyme-adapter-react-16";
 import { Enzyme, render, mount, shallow, configure } from "enzyme";
 import { URL } from "url";
@@ -51,8 +58,6 @@ describe("recipe homework", () => {
     expect(tree).toMatchSnapshot();
   });
 
-  // The Recipe component
-
   // The RecipeCollection component will render, as the recipes list contains data.
   it("contains split-left component", () => {
     const element = render(<RecipeCollection list={props.state.recipes} />);
@@ -73,4 +78,23 @@ describe("recipe homework", () => {
     expect(displayOtherRecipe(0, 6, true)).toEqual(5);
   });
 
+  it("returns index of next recipe", () => {
+    expect(displayOtherRecipe(2, 4, false)).toEqual(3);
+  });
+
+  it("returns index of previous recipe", () => {
+    expect(displayOtherRecipe(3, 6, true)).toEqual(2);
+  });
+
+  it("test click event", () => {
+    const mockCallBack = jest.fn();
+
+    const button = shallow(
+      <Recipe index={0} state={(props.state.recipes, mockCallBack)}>
+        Previous
+      </Recipe>
+    );
+    button.find("bottom-left-button").simulate("click");
+    expect(mockCallBack.mock.calls.length).toEqual(1);
+  });
 });

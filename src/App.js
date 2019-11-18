@@ -1,9 +1,6 @@
 import "./App.css";
 import React, { Component } from "react";
 
-const PATH_BASE = "http://gtest.dev.wwbtc.com";
-const JSON_EXTENSION = "/json/rec";
-
 // displayOtherRecipe: called when Previous or Next buttons is clicked. Determines which recipe to display next.
 function displayOtherRecipe(index, recipeCount, prevButtonClicked) {
   // If it was the "Previous Button" click that caused this function to be called, then display the previous recipe.
@@ -44,7 +41,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const url = "".concat(PATH_BASE, JSON_EXTENSION);
+    const url = "".concat(process.env.REACT_APP_PATH_BASE, process.env.REACT_APP_JSON_EXTENSION);
 
     fetch(url)
       .then(response => response.json())
@@ -53,7 +50,11 @@ class App extends Component {
 
   // Called when Previous button is clicked.
   previousButtonClick = oldIndex => {
-    this.selectedIndex = displayOtherRecipe(oldIndex, this.state.recipes.length, true);
+    this.selectedIndex = displayOtherRecipe(
+      oldIndex,
+      this.state.recipes.length,
+      true
+    );
 
     // Set the currently viewed recipe to the one that was clicked.
     this.setState({ selectedIndex: this.selectedIndex });
@@ -61,7 +62,11 @@ class App extends Component {
 
   // Called when Next button is clicked.
   nextButtonClick = oldIndex => {
-    this.selectedIndex = displayOtherRecipe(oldIndex, this.state.recipes.length, false);
+    this.selectedIndex = displayOtherRecipe(
+      oldIndex,
+      this.state.recipes.length,
+      false
+    );
     this.setState({ selectedIndex: this.selectedIndex });
   };
 
@@ -73,6 +78,7 @@ class App extends Component {
   };
 
   render() {
+    console.log(process.env.REACT_APP_TAB_TITLE);
     const numberOfRecipes = Object.keys(this.state.recipes[0]).length;
     let rc;
     if (numberOfRecipes > 0) {
@@ -98,8 +104,8 @@ class App extends Component {
 
     return (
       <div>
+        {(document.title = process.env.REACT_APP_TAB_TITLE)}
         {rc}
-        {console.log(process.env.REACT_APP_TAB_TITLE)}
       </div>
     );
   }
@@ -114,9 +120,8 @@ function createMarkup(data) {
 // Recipe: shows details about the first recipe in the list or a recipe that has been clicked on.
 const Recipe = ({ index, state }) => (
   <div className="split-right">
-    {console.log("state.indexTest : " + state.indexTest)}
     <span>
-      <img src={PATH_BASE + state.recipes[index].field_images} />
+      <img src={process.env.REACT_APP_PATH_BASE + state.recipes[index].field_images} />
     </span>
     <span>
       <h1> {state.recipes[index].title} </h1>
@@ -156,7 +161,7 @@ const RecipeCollection = ({ list, state }) => (
           onClick={() => state.imageClick(index)}
         >
           <span>
-            <img className="small-image" src={PATH_BASE + item.field_images} />
+            <img className="small-image" src={process.env.REACT_APP_PATH_BASE + item.field_images} />
           </span>
           <span className="text-right">
             <h3> {item.title} </h3>
@@ -172,4 +177,17 @@ const RecipeCollection = ({ list, state }) => (
 
 export default App;
 
-export { App, Recipe, RecipeCollection, displayOtherRecipe };
+export {
+  App,
+  Recipe,
+  RecipeCollection, 
+  displayOtherRecipe
+};
+
+/*
+,
+  previousButtonClick,
+  nextButtonClick,
+  ,
+  imageClick
+*/
