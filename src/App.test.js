@@ -93,6 +93,7 @@ describe("recipe homework", () => {
     expect(displayOtherRecipe(3, 6, true)).toEqual(2);
   });
 
+  /*
   it("test click event", () => {
     const mockCallBack = jest.fn();
 
@@ -104,4 +105,6 @@ describe("recipe homework", () => {
     button.find("bottom-left-button").simulate("click");
     expect(mockCallBack.mock.calls.length).toEqual(1);
   });
+  */
+ 
 });
