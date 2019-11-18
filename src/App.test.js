@@ -47,8 +47,14 @@ const props = {
 
 configure({ adapter: new Adapter() });
 
-test("snapshot", () => {
+test("Recipe snapshot", () => {
   const component = renderer.create(<Recipe {...props} />);
+  let tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test("RecipeCollection snapshot", () => {
+  const component = renderer.create(<RecipeCollection list={props.state.recipes} {...props} />);
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
@@ -106,5 +112,5 @@ describe("recipe homework", () => {
     expect(mockCallBack.mock.calls.length).toEqual(1);
   });
   */
- 
+
 });

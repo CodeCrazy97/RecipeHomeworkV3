@@ -1,5 +1,142 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Recipe snapshot 1`] = `
+<div
+  className="split-right"
+>
+  <span>
+    <img
+      src="undefined/sites/default/files/styles/medium/public/2019-10/542904-pxhere.jpg?itok=kKS71aFe, /sites/default/files/styles/medium/public/2019-10/vigo%20the%20cat%20wallpaper.jpg?itok=C7xZGmBE"
+    />
+  </span>
+  <span>
+    <h1>
+       
+      Tomato and olive focaccia (TM)
+       
+    </h1>
+  </span>
+  <span>
+    <h2>
+       Ingredients: 
+      ingredient 1, ingredient 2, ingredient 3, ingredient 4
+       
+    </h2>
+  </span>
+  <span>
+    <h3
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "
+<p> PREPARATION TIME :&nbsp;20<br>COOKING TIME :&nbsp;45<br> SERVES :&nbsp;TODO &lt;<br>DIFFICULTY: EASY<br></p>
+
+
+
+<p> Add the water and the flour to the bowl 30 sec / Speed 5.,Leave for 1 hour to autolyse.,Add the yeast and salt to separate sides of the bowl 10 seconds / Speed 7.,Then 2 minutes / Knead.,Remove the dough from the bowl and form a ball.,Place the dough into a bowl and pour olive oil over the dough to make sure it is well coated.,Cover and leave to rest overnight in the fridge.,The next day, remove from the fridge and bring to room temperature.,Pour enough olive oil to cover the base of a roasting pan about 20 x 30cm.,Put the dough in the centre of the pan and let it rest, covered, for 30 minutes.,Turn the dough in the oil (it must be nice and oily) and spread it with the tip of your fingers from the centre.,Sprinkle with tomatoes pieces or cherry tomatoes, cut in half and push well into the dough with the olives.,Sprinkle with oregano, salt and more oil.,Allow to rest until doubled in size.,Cook on the bottom rack of a preheated oven for 25 minutes at 200° C (400° F - gas 6), [fan oven 180° C],Allow to cool on a wire rack. </p>
+",
+        }
+      }
+    />
+  </span>
+  <span>
+    <input
+      className="bottom-left-button"
+      onClick={[Function]}
+      type="button"
+      value="Previous"
+    />
+    <input
+      className="bottom-right-button"
+      onClick={[Function]}
+      type="button"
+      value="Next"
+    />
+  </span>
+</div>
+`;
+
+exports[`RecipeCollection snapshot 1`] = `
+<div
+  className="split-left"
+>
+  <div>
+    <a
+      className="card-link"
+      onClick={[Function]}
+      style={
+        Object {
+          "cursor": "pointer",
+        }
+      }
+      type="button"
+    >
+      <span>
+        <img
+          className="small-image"
+          src="undefined/sites/default/files/styles/medium/public/2019-10/542904-pxhere.jpg?itok=kKS71aFe, /sites/default/files/styles/medium/public/2019-10/vigo%20the%20cat%20wallpaper.jpg?itok=C7xZGmBE"
+        />
+      </span>
+      <span
+        className="text-right"
+      >
+        <h3>
+           
+          Tomato and olive focaccia (TM)
+           
+        </h3>
+        <h4
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "baked flatbread type dish that is easy for even terrible cooks to make (now with 15% less housefire)<br />
+",
+            }
+          }
+        />
+      </span>
+    </a>
+    <br />
+    <br />
+  </div>
+  <div>
+    <a
+      className="card-link"
+      onClick={[Function]}
+      style={
+        Object {
+          "cursor": "pointer",
+        }
+      }
+      type="button"
+    >
+      <span>
+        <img
+          className="small-image"
+          src="undefined/sites/default/files/styles/medium/public/2019-10/img_9212-683x1024.jpg?itok=yDqHlTFF"
+        />
+      </span>
+      <span
+        className="text-right"
+      >
+        <h3>
+           
+          Majorcan vegetable bake
+           
+        </h3>
+        <h4
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "",
+            }
+          }
+        />
+      </span>
+    </a>
+    <br />
+    <br />
+  </div>
+</div>
+`;
+
 exports[`recipe homework matches the snapshot 1`] = `
 <div>
   <div
