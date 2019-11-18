@@ -47,10 +47,17 @@ const props = {
 
 configure({ adapter: new Adapter() });
 
+test("snapshot", () => {
+  const component = renderer.create(<Recipe {...props} />);
+  let tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 describe("recipe homework", () => {
   it("renders without crashing", () => {
     const div = document.createElement("div");
     ReactDOM.render(<App />, div);
+    ReactDOM.unmountComponentAtNode(div);
   });
 
   test("matches the snapshot", () => {
