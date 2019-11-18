@@ -78,7 +78,6 @@ class App extends Component {
   };
 
   render() {
-    console.log(process.env.REACT_APP_TAB_TITLE);
     const numberOfRecipes = Object.keys(this.state.recipes[0]).length;
     let rc;
     if (numberOfRecipes > 0) {
