@@ -54,14 +54,16 @@ test("Recipe snapshot", () => {
 });
 
 test("RecipeCollection snapshot", () => {
-  const component = renderer.create(<RecipeCollection list={props.state.recipes} {...props} />);
+  const component = renderer.create(
+    <RecipeCollection list={props.state.recipes} {...props} />
+  );
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 describe("recipe homework", () => {
   it("renders without crashing", () => {
-    const div = document.createElement("div");
+    const div = document.createElement("root");
     ReactDOM.render(<App />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
@@ -115,5 +117,4 @@ describe("recipe homework", () => {
     expect(mockCallBack.mock.calls.length).toEqual(1);
   });
   */
-
 });
