@@ -5,6 +5,20 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+To download this project, type the following sequence of commands in the Linux VM terminal:
+**git clone https://github.com/CodeCrazy97/RecipeHomeworkV3**
+**cd RecipeHomeworkV3**
+**npm install**
+
+Then, you'll want to go to the package.json file and change the file paths pointing to the .env.development and .env.production files to where they now exist in the project you cloned. (When you first download this project, the paths to these files will be /mnt/c/projects/hackernews/src/.env.development and /mnt/c/projects/hackernews/src/.env.production. Change these locations in package.json to where they now exist on your VM.)
+
+To run this project in dev mode, type the following command from Linux VM:
+**npm run start:dev**
+
+To run this project in production mode, type:
+**npm run start:prod**
+
+
 ## Available Scripts
 
 In the project directory, you can run:

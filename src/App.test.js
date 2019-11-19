@@ -67,7 +67,10 @@ describe("recipe homework", () => {
   });
 
   test("matches the snapshot", () => {
-    const tree = renderer.create(<App />).toJSON();
+    const component = renderer.create(<App />);
+    const tree = component.toJSON();
+
+    //const tree = renderer.create(<App />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 

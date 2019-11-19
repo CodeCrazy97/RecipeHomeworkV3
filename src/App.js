@@ -182,11 +182,3 @@ export {
   RecipeCollection, 
   displayOtherRecipe
 };
-
-/*
-,
-  previousButtonClick,
-  nextButtonClick,
-  ,
-  imageClick
-*/
