@@ -1,4 +1,5 @@
 import React from "react";
+import sinon from "sinon";
 import ReactDOM from "react-dom";
 import renderer from "react-test-renderer";
 import App, {
@@ -104,17 +105,4 @@ describe("recipe homework", () => {
     expect(displayOtherRecipe(3, 6, true)).toEqual(2);
   });
 
-  /*
-  it("test click event", () => {
-    const mockCallBack = jest.fn();
-
-    const button = shallow(
-      <Recipe index={0} state={(props.state.recipes, mockCallBack)}>
-        Previous
-      </Recipe>
-    );
-    button.find("bottom-left-button").simulate("click");
-    expect(mockCallBack.mock.calls.length).toEqual(1);
-  });
-  */
 });

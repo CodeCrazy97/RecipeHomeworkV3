@@ -41,7 +41,10 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const url = "".concat(process.env.REACT_APP_PATH_BASE, process.env.REACT_APP_JSON_EXTENSION);
+    const url = "".concat(
+      process.env.REACT_APP_PATH_BASE,
+      process.env.REACT_APP_JSON_EXTENSION
+    );
 
     fetch(url)
       .then(response => response.json())
@@ -120,7 +123,11 @@ function createMarkup(data) {
 const Recipe = ({ index, state }) => (
   <div className="split-right">
     <span>
-      <img src={process.env.REACT_APP_PATH_BASE + state.recipes[index].field_images} />
+      <img
+        src={
+          process.env.REACT_APP_PATH_BASE + state.recipes[index].field_images
+        }
+      />
     </span>
     <span>
       <h1> {state.recipes[index].title} </h1>
@@ -133,6 +140,7 @@ const Recipe = ({ index, state }) => (
     </span>
     <span>
       <input
+        id="bottom-left-button"
         className="bottom-left-button"
         type="button"
         value="Previous"
@@ -154,13 +162,17 @@ const RecipeCollection = ({ list, state }) => (
     {list.map((item, index) => (
       <div key={item.objectID}>
         <a
+          id="recipeButton"
           style={{ cursor: "pointer" }}
           type="button"
           className="card-link"
           onClick={() => state.imageClick(index)}
         >
           <span>
-            <img className="small-image" src={process.env.REACT_APP_PATH_BASE + item.field_images} />
+            <img
+              className="small-image"
+              src={process.env.REACT_APP_PATH_BASE + item.field_images}
+            />
           </span>
           <span className="text-right">
             <h3> {item.title} </h3>
@@ -176,9 +188,4 @@ const RecipeCollection = ({ list, state }) => (
 
 export default App;
 
-export {
-  App,
-  Recipe,
-  RecipeCollection, 
-  displayOtherRecipe
-};
+export { App, Recipe, RecipeCollection, displayOtherRecipe };

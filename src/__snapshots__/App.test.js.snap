@@ -41,6 +41,7 @@ exports[`Recipe snapshot 1`] = `
   <span>
     <input
       className="bottom-left-button"
+      id="bottom-left-button"
       onClick={[Function]}
       type="button"
       value="Previous"
@@ -62,6 +63,7 @@ exports[`RecipeCollection snapshot 1`] = `
   <div>
     <a
       className="card-link"
+      id="recipeButton"
       onClick={[Function]}
       style={
         Object {
@@ -100,6 +102,7 @@ exports[`RecipeCollection snapshot 1`] = `
   <div>
     <a
       className="card-link"
+      id="recipeButton"
       onClick={[Function]}
       style={
         Object {
