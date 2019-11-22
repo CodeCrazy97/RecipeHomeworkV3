@@ -12,7 +12,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:dev": "env-cmd -f /mnt/c/projects/hackernews/src/.env.development npm run test",
+    "test:test": "env-cmd -f /mnt/c/projects/hackernews/src/.env.test npm run test",
     "eject": "react-scripts eject",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "start:dev": "env-cmd -f /mnt/c/projects/hackernews/src/.env.development npm start",

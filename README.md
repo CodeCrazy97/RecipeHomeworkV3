@@ -25,12 +25,13 @@ To run this project in dev mode, type the following command from Linux VM:
 **npm run start:dev**
 
 
-
-
 To run this project in production mode, type:
 
 **npm run start:prod**
 
+To run this project in test mode, type:
+
+**npm run test:test**
 
 
 ## Available Scripts
