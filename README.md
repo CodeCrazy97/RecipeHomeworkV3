@@ -32,7 +32,7 @@ To run this project in production mode, type:
 
 To run this project in test mode, type:
 
-**npm run test:test**
+**npm run test**
 
 
 ## Available Scripts
