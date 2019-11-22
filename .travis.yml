@@ -10,3 +10,7 @@ after_script:
 notifications:
   slack:
     on_success: always
+env:
+  - REACT_APP_TAB_TITLE="496 Project - Prod"
+  - REACT_APP_PATH_BASE=http://gtest.dev.wwbtc.com
+  - REACT_APP_JSON_EXTENSION=/json/rec
