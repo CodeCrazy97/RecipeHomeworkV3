@@ -104,5 +104,4 @@ describe("recipe homework", () => {
   it("returns index of previous recipe", () => {
     expect(displayOtherRecipe(3, 6, true)).toEqual(2);
   });
-
 });
