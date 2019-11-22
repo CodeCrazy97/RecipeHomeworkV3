@@ -17,7 +17,7 @@ To run this project, type the following sequence of commands in the terminal:
 Then, you'll want to go to the package.json file and change the file paths pointing to the .env.development and .env.production files to where they now exist in the project you cloned. (When you first download this project, the paths to these files will be **/mnt/c/projects/hackernews/src/.env.development** and **/mnt/c/projects/hackernews/src/.env.production**. Change these locations in package.json to where they now exist on your VM after cloning the repo.)
 
 
-There are two ways to run this app: dev mode and prod mode. 
+There are three ways to run this app: dev mode, prod mode, and test mode. 
 
 
 To run this project in dev mode, type the following command from Linux VM:
@@ -28,6 +28,7 @@ To run this project in dev mode, type the following command from Linux VM:
 To run this project in production mode, type:
 
 **npm run start:prod**
+
 
 To run this project in test mode, type:
 

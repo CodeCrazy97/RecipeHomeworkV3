@@ -142,7 +142,7 @@ exports[`RecipeCollection snapshot 1`] = `
 
 exports[`recipe homework matches the snapshot 1`] = `
 <div>
-  496 Project - Dev
+  496 Project - Test
   <div
     className="empty-recipes-message"
   >
