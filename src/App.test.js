@@ -1,5 +1,4 @@
 import React from "react";
-import sinon from "sinon";
 import ReactDOM from "react-dom";
 import renderer from "react-test-renderer";
 import App, {
@@ -11,9 +10,7 @@ import App, {
   RecipeCollection
 } from "./App";
 import Adapter from "enzyme-adapter-react-16";
-import { Enzyme, render, mount, shallow, configure } from "enzyme";
-import { URL } from "url";
-import { stat } from "fs";
+import { render, configure } from "enzyme";
 
 const props = {
   index: 0,

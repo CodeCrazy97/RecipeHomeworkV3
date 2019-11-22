@@ -5,7 +5,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-To run this project, type the following sequence of commands in the terminal:
+To download and run this project, type the following sequence of commands in the terminal:
 
 **git clone https://github.com/CodeCrazy97/RecipeHomeworkV3**
 
