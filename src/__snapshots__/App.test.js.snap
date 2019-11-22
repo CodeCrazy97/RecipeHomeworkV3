@@ -6,7 +6,7 @@ exports[`Recipe snapshot 1`] = `
 >
   <span>
     <img
-      src="undefined/sites/default/files/styles/medium/public/2019-10/542904-pxhere.jpg?itok=kKS71aFe, /sites/default/files/styles/medium/public/2019-10/vigo%20the%20cat%20wallpaper.jpg?itok=C7xZGmBE"
+      src="http://gtest.dev.wwbtc.com/sites/default/files/styles/medium/public/2019-10/542904-pxhere.jpg?itok=kKS71aFe, /sites/default/files/styles/medium/public/2019-10/vigo%20the%20cat%20wallpaper.jpg?itok=C7xZGmBE"
     />
   </span>
   <span>
@@ -75,7 +75,7 @@ exports[`RecipeCollection snapshot 1`] = `
       <span>
         <img
           className="small-image"
-          src="undefined/sites/default/files/styles/medium/public/2019-10/542904-pxhere.jpg?itok=kKS71aFe, /sites/default/files/styles/medium/public/2019-10/vigo%20the%20cat%20wallpaper.jpg?itok=C7xZGmBE"
+          src="http://gtest.dev.wwbtc.com/sites/default/files/styles/medium/public/2019-10/542904-pxhere.jpg?itok=kKS71aFe, /sites/default/files/styles/medium/public/2019-10/vigo%20the%20cat%20wallpaper.jpg?itok=C7xZGmBE"
         />
       </span>
       <span
@@ -114,7 +114,7 @@ exports[`RecipeCollection snapshot 1`] = `
       <span>
         <img
           className="small-image"
-          src="undefined/sites/default/files/styles/medium/public/2019-10/img_9212-683x1024.jpg?itok=yDqHlTFF"
+          src="http://gtest.dev.wwbtc.com/sites/default/files/styles/medium/public/2019-10/img_9212-683x1024.jpg?itok=yDqHlTFF"
         />
       </span>
       <span
@@ -142,6 +142,7 @@ exports[`RecipeCollection snapshot 1`] = `
 
 exports[`recipe homework matches the snapshot 1`] = `
 <div>
+  496 Project - Dev
   <div
     className="empty-recipes-message"
   >
