@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.com/CodeCrazy97/RecipeHomeworkV3.svg?branch=master)](https://travis-ci.com/CodeCrazy97/RecipeHomeworkV3)
 [![Coverage Status](https://coveralls.io/repos/github/CodeCrazy97/RecipeHomeworkV3/badge.svg?branch=master)](https://coveralls.io/github/CodeCrazy97/RecipeHomeworkV3?branch=master)
+[![npm version](https://badge.fury.io/js/create-react-app.svg)](https://badge.fury.io/js/create-react-app)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -27,7 +27,6 @@ class App extends Component {
     super(props);
 
     this.state = {
-      indexTest: 0,
       recipes: [{}],
       imageClick: this.imageClick,
       previousButtonClick: this.previousButtonClick,
